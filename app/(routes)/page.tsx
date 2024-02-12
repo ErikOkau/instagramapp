@@ -1,8 +1,7 @@
 export default function () {
     return (
         <div>
-            test
+            <h1>Page</h1>
         </div>
-
     )
 }
