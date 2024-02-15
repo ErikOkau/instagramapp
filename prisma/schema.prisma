@@ -18,6 +18,8 @@ model User {
 	phone		Int?		@unique
 	comments	Comment[]
 	likedPosts	Like[]
+
+	password	String
 }
 
 model Post {
