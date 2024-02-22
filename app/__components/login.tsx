@@ -1,7 +1,7 @@
 "use client"
 
-import { useFormStatus } from "react-dom"
 import { login } from "../__actions/authActions"
+import SubmitButton from "./submitButton"
 
 export default function async () {
     return (
@@ -14,17 +14,10 @@ export default function async () {
         }}>
             <input type="text" name="mail" placeholder="Email" required />
             <input type="password" name="password" placeholder="Password" required />
-            <SubmitButton />
+            <SubmitButton 
+                text="Login" 
+                pendingText="Logging in..."
+            />
         </form>
-    )
-}
-
-function SubmitButton() {
-    const { pending } = useFormStatus()
-
-    return (
-        <button type="submit">
-            {pending ? "Loading..." : "Login"}
-        </button>
     )
 }

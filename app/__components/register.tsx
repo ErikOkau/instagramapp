@@ -2,6 +2,7 @@
 
 import { useFormStatus } from "react-dom"
 import { register } from "../__actions/authActions"
+import SubmitButton from "./submitButton"
 
 export default function () {
     return (
@@ -13,18 +14,10 @@ export default function () {
             <input type="text" name="phone" placeholder="Phone number" />
             <input type="password" name="password" placeholder="Password" required />
             
-            <SubmitButton />
+            <SubmitButton
+                text="Create"
+                pendingText="Registering..."
+            />
         </form>
-    )
-}
-
-
-function SubmitButton() {
-    const { pending } = useFormStatus()
-
-    return (
-        <button type="submit">
-            {pending ? "Register..." : "Login"}
-        </button>
     )
 }

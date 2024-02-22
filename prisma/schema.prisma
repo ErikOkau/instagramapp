@@ -15,6 +15,7 @@ model User {
   password   String
   comments   Comment[]
   likedPosts Like[]
+  posts      Post[]
 }
 
 model Post {
@@ -25,10 +26,14 @@ model Post {
   comments   Comment[]
   images     Image[]
   likes      Like[]
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Image {
   id     Int   @id @default(autoincrement())
+  orderNumber Int
   bytes  Bytes
   postId Int
   post   Post  @relation(fields: [postId], references: [id])
