@@ -1,0 +1,58 @@
+:root {
+    --background: #232B2B;
+    --light-green: #006666;
+    --dark-green: #005555;
+    --darkest-green: #004444;
+    --white: #FFFFFF;
+    --more-black: #192428;
+    --grey: #A8A8A8;
+}
+
+
+body {
+    background-color: var(--background);
+    border-right: 1px solid var(--white);
+    max-width: 25rem;
+    height: 90vh;
+
+    .nav {
+        width: 21rem;
+        margin-top: 3rem;
+
+        .content_nav {
+            display: flex;
+            flex-direction: column;
+            margin-left: 3rem;
+
+            h1 {
+                color: var(--light-green);
+                margin-top: 2rem;
+                font-size: 2.5rem;
+            }
+
+            .actions {
+                display: flex;
+                flex-direction: column;
+                margin-top: 3rem;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    color: var(--white);
+                    text-decoration: none;
+                    margin-top: 1.25rem;
+                    font-size: 1.5rem;
+                    font-weight: 550;
+                }
+
+                img {
+                    width: 2rem;
+                    height: 2rem;
+                    margin-right: 0.5rem;
+                }
+
+
+            }
+        }
+    }
+}
