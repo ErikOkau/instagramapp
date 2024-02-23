@@ -7,8 +7,6 @@ export function sha256(text:string) {
     return hash.digest("hex")
 }
 
-export function imageToBase64(file: File): Promise<number[]> {
-    return new Promise((resolve, reject) => {
-        const arrayBuffer = file.arrayBuffer()
-    });
+export function isServerError<T>(data: T | number): data is number {
+    return typeof data === "number"
 }
