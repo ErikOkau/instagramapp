@@ -1,20 +1,30 @@
+import ImageCarusel from "../../__components/post/images"
+import { isServerError } from "@/app/__assets/utils"
 import { PrismaClient } from "@prisma/client"
+
 const prisma = new PrismaClient()
 
-export default function ({id}:{id: number}) {
-    const post = prisma.post.findUnique({
+export default async function ({id}:{id: number}) {
+    const post = await prisma.post.findUnique({
         where: {
             id
         },
         include: {
             user: true,
+            images: true
         }
     }) 
-    console.log(post)
+
+    const images = post?.images.map(image => {
+        return {
+            ...image,
+            bytes: image.bytes.toString('base64')
+        }
+    })
+
     return (
         <div>
-{/*             <h1>{post.user.username}</h1>
-            <h1>{post.comment}</h1>
- */}        </div>
+{            <ImageCarusel images={images} ></ImageCarusel>
+}        </div>
     )
 }
