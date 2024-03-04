@@ -14,7 +14,7 @@ export default function async () {
             }
         }}>
             <h1>Velkommen</h1>
-            <p>Vennligst skriv inn brukernavn og passord</p>
+            <p>Vennligst skriv inn brukernavn og passord.</p>
 
             <label>Brukernavn</label>
             <input type="text" name="mail" placeholder="Email" required />
@@ -23,7 +23,7 @@ export default function async () {
             <input type="password" name="password" placeholder="Password" required />
 
             <SubmitButton 
-                text="Login" 
+                text="Log in" 
                 pendingText="Logging in..."
             />
         </form>

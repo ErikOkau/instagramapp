@@ -11,13 +11,17 @@
 
 body {
     background-color: var(--background);
-    border-right: 1px solid var(--white);
     max-width: 25rem;
     height: 90vh;
+    display: flex;
 
     .nav {
         width: 21rem;
         margin-top: 3rem;
+        border-right: 1px solid var(--white);
+        padding-right: 10rem;
+        margin-top: 4.5rem;
+
 
         .content_nav {
             display: flex;
@@ -26,7 +30,7 @@ body {
 
             h1 {
                 color: var(--light-green);
-                margin-top: 2rem;
+                margin-top: 0.2rem;
                 font-size: 2.5rem;
             }
 
@@ -54,10 +58,10 @@ body {
                 button {
                     display: flex;
                     align-items: center;
-                    margin-top: 25rem;
+                    margin-top: 24rem;
                     background: none;
                     border: none;
-                    width: 135px;
+                    width: 155px;
                     height: 40px;
 
                     color: white;
