@@ -1,0 +1,22 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;    
+
+            > p {
+                font-size: 0.8rem;
+                color: var(--white);
+            }
+        }
+    }
+}
