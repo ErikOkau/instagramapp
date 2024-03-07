@@ -15,7 +15,6 @@ export default function async() {
                 <button onClick={() => setLogin(true)}>Log in</button>
                 <button onClick={() => setLogin(false)}>Registrer</button>
             </div>
-
         </div>
     )
 }
