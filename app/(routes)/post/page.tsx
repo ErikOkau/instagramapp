@@ -5,7 +5,7 @@ export default function () {
     
     return (
         <div>
-            <PostCard id={1} />
+            <PostCard id={2} />
         </div>
     )
 }
