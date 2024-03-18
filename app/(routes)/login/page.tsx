@@ -11,7 +11,7 @@ export default function async() {
     return (
         <div className="login">
             {login ? <Login /> : <Register />}
-            <div className="login_register">
+            <div className="login_or_register">
                 <button onClick={() => setLogin(true)}>Log in</button>
                 <button onClick={() => setLogin(false)}>Registrer</button>
             </div>

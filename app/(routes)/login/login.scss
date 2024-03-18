@@ -7,12 +7,18 @@
 
 
 
-.login_register {
+.login_or_register {
     display: flex;
     place-content: center;
     gap: 2rem;
 
     button {
         padding: 0.4rem;
+        background: none;
+        transition: all 1s ease-in-out;
+
+        &:hover {
+           text-decoration: underline 3px solid #fff;
+        }
     }
 }
