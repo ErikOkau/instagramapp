@@ -8,21 +8,7 @@
     p {
         font-size: 1rem;
         color: var(--white);
-        font-weight: bold;
-
-        &.lesser {
-            color: var(--grey);
-            font-weight: bold;
-        }
-
-        &.weak {
-            color: var(--grey);
-            font-weight: normal;
-        }
-
-        &.hover {
-            cursor: pointer;
-        }
+        font-weight: bold;   
     }
 
     .top {

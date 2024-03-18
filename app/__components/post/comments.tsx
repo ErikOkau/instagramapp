@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { postDateFormater } from "@/app/__assets/utils";
 import type { Comment, User } from "@prisma/client";
+import './comments.scss'
 
 type CommentProps = Comment & {user: User}
 
@@ -20,15 +21,15 @@ export default function ({comments}: {comments?: CommentProps[]}) {
             {showAll ? comments.map(comment => {
                 return (
                     <div key={comment.id}>
-                        <p className="lesser">{comment.user.username} - {postDateFormater(comment.createAt)}</p>
-                        <p> {comment.text}</p>
+                        <p className="weak">{comment.user.username} - {postDateFormater(comment.createAt)}</p>
+                        <p className="normal"> {comment.text}</p>
                     </div>
                 )
             }) : comments.slice(0, 2).map(comment => {
                 return (
                     <div key={comment.id}>
-                        <p className="lesser">{comment.user.username} - {postDateFormater(comment.createAt)}</p>
-                        <p> {comment.text}</p>
+                        <p className="weak">{comment.user.username} - {postDateFormater(comment.createAt)}</p>
+                        <p className="normal"> {comment.text}</p>
                     </div>
                 )
             })}

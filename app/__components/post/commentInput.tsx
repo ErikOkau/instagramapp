@@ -3,6 +3,7 @@ import { addComment } from "@/app/__actions/postActions";
 import SubmitButton from "../submitButton";
 import { useRouter } from "next/navigation"
 import { useRef } from "react";
+import './comments.scss'
 
 export default function async({postId}: {postId?: number}) {
     const router = useRouter()
@@ -27,7 +28,7 @@ export default function async({postId}: {postId?: number}) {
             router.refresh()
         }} >
             <input type="text" name="comment" placeholder="Legg til en kommentar ..." />
-            <SubmitButton text="comment" pendingText="adding" />
+            {/* <SubmitButton text="comment" pendingText="adding" /> */}
         </form>
     )
 }
