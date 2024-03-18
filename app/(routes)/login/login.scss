@@ -15,10 +15,10 @@
     button {
         padding: 0.4rem;
         background: none;
-        transition: all 1s ease-in-out;
+        transition: all 0.5s ease-in-out;
 
         &:hover {
-           text-decoration: underline 3px solid #fff;
+            box-shadow:  0 2px 0 0px #fff;
         }
     }
 }
