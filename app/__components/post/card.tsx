@@ -47,7 +47,6 @@ export default async function ({id}:{id: number}) {
     })
 
     const likeCheck = await checkIfLiked(id)
-
     return (
         <div className="card">
             <div className="top">
@@ -56,7 +55,6 @@ export default async function ({id}:{id: number}) {
                     <p>{post?.user.username} - {postDateFormater(post?.createAt!)}</p>
                 </div>
 
-                <img src="" alt="" />
             </div>
             <ImageCarusel images={images} ></ImageCarusel>
             <IconsButtons postId={post?.id} likedCheck={likeCheck} />
