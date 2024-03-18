@@ -1,7 +1,11 @@
 import ImageCarusel from "../../__components/post/images"
+import CommentInput from "./commentInput"
+import Comments from "./comments"
+import IconsButtons from "./iconsButtons"
 import { isServerError, postDateFormater } from "@/app/__assets/utils"
 import { PrismaClient } from "@prisma/client"
 import "./card.scss"
+import { checkIfLiked } from "@/app/__actions/postActions"
 
 const prisma = new PrismaClient()
 
@@ -12,7 +16,24 @@ export default async function ({id}:{id: number}) {
         },
         include: {
             user: true,
-            images: true
+            images: true,
+            comments: {
+                orderBy: [
+                    {
+                        createAt: 'desc'
+                    }
+                ],
+                include: {
+                    user: true
+                }
+            },
+
+            _count: {
+                select: {
+                    comments: true,
+                    likes: true
+                }
+            }
         }
     }).catch(e => 500)
     
@@ -25,6 +46,8 @@ export default async function ({id}:{id: number}) {
         }
     })
 
+    const likeCheck = await checkIfLiked(id)
+
     return (
         <div className="card">
             <div className="top">
@@ -36,6 +59,11 @@ export default async function ({id}:{id: number}) {
                 <img src="" alt="" />
             </div>
             <ImageCarusel images={images} ></ImageCarusel>
+            <IconsButtons postId={post?.id} likedCheck={likeCheck} />
+            <p>{post?._count.likes} likes</p>
+            <p>@{post?.user.username} - {post?.comment}</p>
+            <Comments comments={post?.comments}/>
+            <CommentInput postId={post?.id}/>
         </div>
     )
 }

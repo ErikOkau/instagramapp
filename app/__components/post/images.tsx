@@ -2,7 +2,7 @@
 
 import { Image } from "@prisma/client"
 import "./images.scss"
-import { useRef, useState } from "react"
+import { useState } from "react"
 
 interface clientImage extends Omit<Image, "bytes"> {
     bytes: string
