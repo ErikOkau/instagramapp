@@ -25,7 +25,6 @@ export async function decrypt(token: string) : Promise<any> {
     const { payload } = await jwtVerify(token, key, { 
         algorithms: ["HS256"]
     })
-    console.log(payload, "payload")
     return payload
 }
 
@@ -82,8 +81,8 @@ export async function updateSession(request: NextRequest) {
     if (!session) return
 
     const parsed = await decrypt(session)
-    console.log(parsed, "parsed")
     const res = NextResponse.next()
+    
     res.cookies.set({
         name: "session",
         value: await encrypt(parsed),

@@ -1,5 +1,6 @@
 import './layout.scss'
 import '../__assets/global.scss'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Next.js',
@@ -19,12 +20,12 @@ export default function RootLayout({
               <h1>Instagram</h1>
 
               <div className="actions">
-                <a href="/"><img src="unselected_icon/home.svg"/>Hjem</a>
-                <a href="/"><img src="unselected_icon/search.svg"/>Søk</a>
-                <a href="/"><img src="unselected_icon/create_new.svg"/>Opprett</a>
-                <a href="/"><img src="unselected_icon/profile.svg"/>Profile</a>
+                <Link href="/"><img src="/unselected_icon/home.svg"/>Hjem</Link>
+                <Link href="/"><img src="/unselected_icon/search.svg"/>Søk</Link>
+                <Link href="/post/create"><img src="/unselected_icon/create_new.svg"/>Opprett</Link>
+                <Link href="/profile"><img src="/unselected_icon/profile.svg"/>Profile</Link>
 
-                <button className="logout"><img src="unselected_icon/logout.svg"/>Logg ut</button>
+                <button className="logout"><img src="/unselected_icon/logout.svg"/>Logg ut</button>
               </div>
           </div>
         </div>
