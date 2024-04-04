@@ -17,6 +17,7 @@ export default function () {
         <img src="/upload_create.svg" />
         <p>Dra bilder eller videoer her</p>
         <input
+          className="inputFile"
           type="file"
           name="images"
           required
