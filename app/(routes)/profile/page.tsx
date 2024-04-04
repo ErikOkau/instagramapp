@@ -1,5 +1,5 @@
 import ProfileCard from "@/app/__components/post/profileCard"
-import { isServerError } from "../../__assets/utils"
+import { isServerError, postDateFormater } from "../../__assets/utils"
 import { decrypt } from "../../__actions/authActions"
 import { PrismaClient } from "@prisma/client"
 import { cookies } from "next/headers"
@@ -43,18 +43,56 @@ export default async function () {
                 }
             },
             comments: true,
-            likedPosts: true
+            likedPosts: {
+                include: {
+                    post: {
+                        include: {
+                            user: true,
+                            images: true,
+                            comments: {
+                                orderBy: [
+                                    {
+                                        createAt: 'desc'
+                                    }
+                                ],
+                                include: {
+                                    user: true
+                                }
+                            },
+        
+                            _count: {
+                                select: {
+                                    comments: true,
+                                    likes: true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }).catch(e => 500)
     if (isServerError(user)) return (<div>Server error</div>)
 
     return (<div>
         <h1>{user?.username}</h1>
-        <p>{user?.posts.length}</p>
+        <p>{user?.posts.length} innlegg</p>
         <hr />  {/* skille linje */}
         <div></div>
-        <div>{user?.posts.map((post) => <ProfileCard post={post} />)}</div>
-        <div>{user?.comments.map((comment) => )}</div>
-
+        <div>{user?.posts.length == 0 ? <div>
+            <h2>Ingen innlegg</h2>
+            <p>Start med å legge til et innlegg</p>
+        </div> : user?.posts.map((post) => <ProfileCard post={post} />)}</div>
+        <div>{user?.comments.length == 0 ? <div>
+            <h2>Ingen kommentarer</h2>
+            <p>Så usosial du er, kommenter en plass</p>
+        </div> : user?.comments.reverse().map((comment) => <div>
+            <p>{user.username} - {postDateFormater(comment.createAt)}</p>
+            <p>{comment.text}</p>
+        </div>)}</div>
+        <div>{user?.likedPosts.length == 0 ? <div>
+            <h2>Ingen likte innlegg</h2>
+            <p>Start med å like et innlegg</p>
+        </div> : user?.likedPosts.map((like) => <ProfileCard post={like.post} />)}</div>
     </div>)
 }
