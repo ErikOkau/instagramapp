@@ -24,9 +24,8 @@ form {
     }
 
     input {
-        color: var(--white);
-        background-color: var(--light-green);
-        border: none;
+        color: var(--black);
+        border: 2px solid var(--white);
         border-radius: 6px;
         height: 1.75rem;
         padding: 0.2rem;

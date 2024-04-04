@@ -1,0 +1,49 @@
+// comments.tsx css
+div {
+    p {
+        font-size: 1rem;
+        color: var(--white);
+        font-weight: bold;
+
+        &.lesser {
+            color: var(--grey);
+            font-weight: bold;
+        }
+
+        &.weak {
+            color: var(--grey);
+            font-weight: normal;
+
+            margin-top: 0.75rem;
+        }
+
+        &.normal {
+            color: var(--white);
+            font-weight: normal;
+
+            margin-top: 0.3rem;
+        }
+
+        &.hover {
+            cursor: pointer;
+        }
+    }
+}
+
+// commentInput.tsx css
+form {
+
+    input {
+        margin-top: 0.5rem;
+        border: none;
+        background: none;
+        color: var(--white);
+        margin-bottom: 0.5rem;
+
+        &:focus {
+            outline: none;    
+        }
+    }
+
+    border-bottom: 2px solid var(--grey);
+}
