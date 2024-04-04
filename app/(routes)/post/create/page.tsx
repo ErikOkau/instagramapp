@@ -16,20 +16,27 @@ export default function () {
         <h1>Opprett nytt innlegg</h1>
         <img src="/upload_create.svg" />
         <p>Dra bilder eller videoer her</p>
-        <input
-          className="inputFile"
-          type="file"
-          name="images"
-          required
-          multiple
-          accept="image/png, image/gif, image/jpeg"
-        />
+        <div className="inputBox">
+          <p>Velg fra enheten din</p>
+          <input
+            className="hide_file"
+            type="file"
+            name="images"
+            required
+            multiple
+            accept="image/png, image/gif, image/jpeg"
+          />
+        </div>
       </div>
 
       <div className="lineBetween"></div>
 
       <div className="rightCreate">
-        <textarea name="content" placeholder="Skriv en undertekst ..." required />
+        <textarea
+          name="content"
+          placeholder="Skriv en undertekst ..."
+          required
+        />
         <SubmitButton text="Publiser" pendingText="Creating..." />
       </div>
     </form>
