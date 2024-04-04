@@ -18,7 +18,7 @@ export default function () {
             <label>Email</label>
             <input type="text" name="mail" placeholder="Email" required />
             <label>Phone number</label>
-            <input type="text" name="phone" placeholder="Phone number" />
+            <input type="text" maxLength={9} name="phone" placeholder="Phone number" />
             <label>Password</label>
             <input type="password" name="password" placeholder="Password" required />
             

@@ -136,7 +136,8 @@ export async function likePost(postId: number) {
             }
         })
 
-        return { id: alreadyLiked.id }
+        
+        return { likedState: false }
     }
 
     const response = await prisma.like.create({
@@ -158,7 +159,7 @@ export async function likePost(postId: number) {
 
     if(isServerError(response)) return { error: "Error liking post" }
 
-    return { id: response.id }
+    return { id: response.id, likedState: true }
 }
 
 export async function checkIfLiked(postId: number) {
