@@ -15,6 +15,7 @@ export default function () {
       <div className="leftCreate">
         <h1>Opprett nytt innlegg</h1>
         <img src="/upload_create.svg" />
+        <p>Dra bilder eller videoer her</p>
         <input
           type="file"
           name="images"
@@ -27,8 +28,8 @@ export default function () {
       <div className="lineBetween"></div>
 
       <div className="rightCreate">
-        <textarea name="content" placeholder="Content" required />
-        <SubmitButton text="Create" pendingText="Creating..." />
+        <textarea name="content" placeholder="Skriv en undertekst ..." required />
+        <SubmitButton text="Publiser" pendingText="Creating..." />
       </div>
     </form>
   )
