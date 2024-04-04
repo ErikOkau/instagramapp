@@ -16,12 +16,35 @@ form {
       font-size: 2rem;
       width: 20rem;
     }
-    img {
-      margin-top: 5rem;
-      margin-bottom: 1rem;
-      width: 10rem;
-      height: 10rem;
+    .inputImage {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+        float: left;
+        position: relative;
+      
+      img {
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+        width: 10rem;
+        height: 10rem;
+      }
+
+      .hide_imageFile {
+        position: absolute;
+        z-index: 1000;
+        opacity: 0;
+        cursor: pointer;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 9rem;
+        height: 7.5rem;
+      }
     }
+
     p {
       font-size: 1.25rem;
       color: var(--white);
@@ -36,8 +59,8 @@ form {
       border-radius: 6px;
       text-align: center;
       cursor: pointer;
-      float:left;
-      position:relative;
+      float: left;
+      position: relative;
 
       p {
         font-size: 1rem;
