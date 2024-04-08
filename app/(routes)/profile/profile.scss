@@ -1,0 +1,24 @@
+.profile_navigation {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+
+  .posts {
+    margin-left: -5rem;
+    margin-top: -3rem;
+  }
+
+  .comments {
+    .commentsContent {
+    }
+
+    .usersComments {
+    }
+  }
+
+  .likedPosts {
+    margin-left: -5rem;
+    margin-top: -3rem;
+  }
+}
