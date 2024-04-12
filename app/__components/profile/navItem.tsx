@@ -27,31 +27,46 @@ export default function ({
       <hr /> {/* skille linje */}
       <div className="pages">
         <div
+          className="onclick_innlegg"
           onClick={() => {
             setCounter(posts)
             setLabel("innlegg")
           }}
         >
-          <img src="" alt="tabel" />
-          <p>Innlegg</p>
+      
+            <span>
+              <img src="/unselected_icon/Posts.svg" />
+              <p>Innlegg</p>
+            </span>
+     
         </div>
         <div
+          className="onclick_kommentarer"
           onClick={() => {
             setCounter(comments)
             setLabel("kommentarer")
           }}
         >
-          <img src="" alt="comments" />
-          <p>Kommentarer</p>
+         
+            <span>
+              <img src="/Comment.svg" />
+              <p>Kommentarer</p>
+            </span>
+       
         </div>
         <div
+          className="onclick_likedPosts"
           onClick={() => {
             setCounter(likedPosts)
             setLabel("liker")
           }}
         >
-          <img src="" alt="Liked posts" />
-          <p>Likte innlegg</p>
+          
+            <span>
+              <img src="/unselected_icon/heart.svg" />
+              <p>Likte innlegg</p>
+            </span>
+         
         </div>
       </div>
     </div>

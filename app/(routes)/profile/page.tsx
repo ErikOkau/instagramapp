@@ -81,15 +81,13 @@ export default async function () {
 
   return (
     <div className="profile_navigation">
-      <NavItem 
-        username={user?.username!} 
-        posts={user?.posts.length!} 
-        comments={user?.comments.length!} 
+      <NavItem
+        username={user?.username!}
+        posts={user?.posts.length!}
+        comments={user?.comments.length!}
         likedPosts={user?.likedPosts.length!}
       />
-      <Pages
-        user={user!}
-      />
+      <Pages user={user!} />
     </div>
   )
 }

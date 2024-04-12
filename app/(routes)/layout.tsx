@@ -21,7 +21,6 @@ export default function RootLayout({
 
               <div className="actions">
                 <Link href="/"><img src="/unselected_icon/home.svg"/>Hjem</Link>
-                <Link href="/"><img src="/unselected_icon/search.svg"/>Søk</Link>
                 <Link href="/post/create"><img src="/unselected_icon/create_new.svg"/>Opprett</Link>
                 <Link href="/profile"><img src="/unselected_icon/profile.svg"/>Profile</Link>
 
