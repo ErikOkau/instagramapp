@@ -10,10 +10,19 @@
   }
 
   .comments {
-    .commentsContent {
-    }
-
     .usersComments {
+      margin-top: 3rem;
+
+      .commentUsername {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      .commentText {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        color: grey;
+      }
     }
   }
 

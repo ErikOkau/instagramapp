@@ -12,9 +12,15 @@ export default function ({
   posts: number
   comments: number
   likedPosts: number
+
 }) {
   const [counter, setCounter] = useState(posts)
   const [counterLabel, setLabel] = useState("innlegg")
+
+  const postsElm = document.getElementById("profile_posts")
+  const commentsElm = document.getElementById("profile_comments")
+  const likedPostsElm = document.getElementById("profile_likedPosts")
+
 
   return (
     <div className="profile_nav_Content">
@@ -31,6 +37,9 @@ export default function ({
           onClick={() => {
             setCounter(posts)
             setLabel("innlegg")
+            postsElm?.style.setProperty("display", "block")
+            commentsElm?.style.setProperty("display", "none")
+            likedPostsElm?.style.setProperty("display", "none")
           }}
         >
       
@@ -45,6 +54,9 @@ export default function ({
           onClick={() => {
             setCounter(comments)
             setLabel("kommentarer")
+            postsElm?.style.setProperty("display", "none")
+            commentsElm?.style.setProperty("display", "block")
+            likedPostsElm?.style.setProperty("display", "none")
           }}
         >
          
@@ -59,6 +71,9 @@ export default function ({
           onClick={() => {
             setCounter(likedPosts)
             setLabel("liker")
+            postsElm?.style.setProperty("display", "none")
+            commentsElm?.style.setProperty("display", "none")
+            likedPostsElm?.style.setProperty("display", "block")
           }}
         >
           

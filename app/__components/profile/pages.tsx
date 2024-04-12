@@ -28,7 +28,7 @@ export default function ({user} : {user: FukkAss}) {
     return (
         <div>
             {/* Posts */}
-            <div className="posts" hidden>
+            <div className="posts" id="profile_posts">
                 {user?.posts.length == 0 ? (
                 <div className="postsContent">
                     <h2>Ingen innlegg</h2>
@@ -40,7 +40,7 @@ export default function ({user} : {user: FukkAss}) {
             </div>
 
             {/* Comments */}
-            <div className="comments" hidden>
+            <div className="comments" id="profile_comments">
                 {user?.comments.length == 0 ? (
                 <div className="commentsContent">
                     <h2>Ingen kommentarer</h2>
@@ -49,17 +49,17 @@ export default function ({user} : {user: FukkAss}) {
                 ) : (
                 user?.comments.reverse().map((comment) => (
                     <div className="usersComments">
-                    <p>
+                    <p className="commentUsername">
                         {user.username} - {postDateFormater(comment.createAt)}
                     </p>
-                    <p>{comment.text}</p>
+                    <p className="commentText">{comment.text}</p>
                     </div>
                 ))
                 )}
             </div>
 
             {/* Liked posts */}
-            <div className="likedPosts" hidden>
+            <div className="likedPosts" id="profile_likedPosts">
                 {user?.likedPosts.length == 0 ? (
                 <div className="likedPosts_content">
                     <h2>Ingen likte innlegg</h2>
