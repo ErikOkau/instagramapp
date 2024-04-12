@@ -28,7 +28,7 @@ export default function ({user} : {user: FukkAss}) {
     return (
         <div>
             {/* Posts */}
-            <div className="posts">
+            <div className="posts" hidden>
                 {user?.posts.length == 0 ? (
                 <div className="postsContent">
                     <h2>Ingen innlegg</h2>
@@ -40,7 +40,7 @@ export default function ({user} : {user: FukkAss}) {
             </div>
 
             {/* Comments */}
-            <div className="comments">
+            <div className="comments" hidden>
                 {user?.comments.length == 0 ? (
                 <div className="commentsContent">
                     <h2>Ingen kommentarer</h2>
@@ -59,7 +59,7 @@ export default function ({user} : {user: FukkAss}) {
             </div>
 
             {/* Liked posts */}
-            <div className="likedPosts">
+            <div className="likedPosts" hidden>
                 {user?.likedPosts.length == 0 ? (
                 <div className="likedPosts_content">
                     <h2>Ingen likte innlegg</h2>
