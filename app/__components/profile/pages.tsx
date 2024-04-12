@@ -2,6 +2,7 @@ import { Post, User, Image, Comment } from "@prisma/client"
 import ProfileCard from "../post/profileCard"
 import { postDateFormater } from "@/app/__assets/utils"
 
+
 type CardComment = Comment & { user: User }
 
 type CardPost = Post & {
