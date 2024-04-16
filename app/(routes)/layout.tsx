@@ -1,6 +1,7 @@
 import './layout.scss'
 import '../__assets/global.scss'
 import Link from 'next/link'
+import LogoutButton from '../__components/logoutButton'
 
 export const metadata = {
   title: 'Next.js',
@@ -24,7 +25,7 @@ export default function RootLayout({
                 <Link href="/post/create"><img src="/unselected_icon/create_new.svg"/>Opprett</Link>
                 <Link href="/profile"><img src="/unselected_icon/profile.svg"/>Profile</Link>
 
-                <button className="logout"><img src="/unselected_icon/logout.svg"/>Logg ut</button>
+                <LogoutButton />
               </div>
           </div>
         </div>
