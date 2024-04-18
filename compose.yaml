@@ -3,7 +3,7 @@ services:
     build:
       context: .
     environment:
-      NODE_ENV: production
+      DATABASE_URL: file:./dev.db
     ports:
       - 3000:3000
 
