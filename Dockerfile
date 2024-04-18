@@ -26,9 +26,11 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
+ENV DATABASE_URL="postgresql://user:password@pg_db:5432/db"
 RUN npx prisma generate
-ENV DATABASE_URL="file:./dev.db"
 RUN npx prisma db push
+
+WORKDIR /app
 
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
