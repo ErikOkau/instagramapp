@@ -28,6 +28,8 @@ export default async function () {
     },
   })
 
+  console.log(posts)
+
   return (
     <div>
       {posts.map((post) => {
