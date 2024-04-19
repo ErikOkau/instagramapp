@@ -30,7 +30,7 @@ export default async function () {
 
   return (
     <div>
-      {posts.map((post: any) => {
+      {posts.map((post) => {
         return <ProfileCard post={post} />
       })}
     </div>
