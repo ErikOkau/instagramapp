@@ -26,7 +26,6 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
-ENV DATABASE_URL postgres://postgres:Passord01@localhost:5432/instagramapp
 RUN npx prisma generate
 RUN npx prisma db push
 
