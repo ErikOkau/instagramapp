@@ -9,9 +9,10 @@ export async function middleware(req: NextRequest) {
   
   if (!token && pathname !== "/login") {
     const splitPath = pathname.split("/")
-
-
-    if (allowedPaths.includes(splitPath[1]) || pathname !== "/") {
+    console.log(splitPath)
+    console.log(pathname)
+    
+    if (allowedPaths.includes(splitPath[1]) || !paths.includes(pathname)) {
       return NextResponse.next()
     } else if (splitPath[splitPath.length - 1].split(".")[1] === "svg") {
       return NextResponse.next()
@@ -23,3 +24,4 @@ export async function middleware(req: NextRequest) {
 }
 
 const allowedPaths = ["__next", "unselected_icon"]
+const paths = ["/post/create", "/profile", "/"]

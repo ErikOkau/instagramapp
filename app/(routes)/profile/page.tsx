@@ -76,7 +76,7 @@ export default async function () {
         },
       },
     })
-    .catch((e) => 500)
+    .catch(() => 500)
   if (isServerError(user)) return <div>Server error</div>
 
   return (

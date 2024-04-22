@@ -1,7 +1,7 @@
 "use server"
 
 import { PrismaClient } from "@prisma/client"
-import { sha256 } from "../__assets/utils"
+import { sha256 } from "@/app/__assets/utils"
 import { redirect } from "next/navigation"
 import { SignJWT, jwtVerify } from "jose"
 import { cookies } from "next/headers"
